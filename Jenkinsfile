@@ -13,10 +13,10 @@ pipeline {
             steps {
                 sshagent(['Kubernetes']) {
                     sh '''
-                    scp -o StrictHostKeyChecking=no /home/ubuntu/linux-amd64/helm ubuntu@13.126.18.218:/home/ubuntu
-                    scp -o StrictHostKeyChecking=no /home/ubuntu/mongodb.yaml ubuntu@13.126.18.218:/home/ubuntu
-                    scp -o StrictHostKeyChecking=no /home/ubuntu/values.yaml ubuntu@13.126.18.218:/home/ubuntu
-                    ssh -t ubuntu@13.126.18.218 /bin/bash << 'EOF' 
+                    scp -o StrictHostKeyChecking=no /home/ubuntu/linux-amd64/helm ubuntu@3.6.37.53:/home/ubuntu
+                    scp -o StrictHostKeyChecking=no /home/ubuntu/mongodb.yaml ubuntu@3.6.37.53:/home/ubuntu
+                    scp -o StrictHostKeyChecking=no /home/ubuntu/values.yaml ubuntu@3.6.37.53:/home/ubuntu
+                    ssh -t ubuntu@3.6.37.53 /bin/bash << 'EOF' 
                     sudo mv ./helm /usr/local/bin/ 
                     sudo chmod +x /usr/local/bin/helm 
                     export PATH=/usr/local/bin/:$PATH
