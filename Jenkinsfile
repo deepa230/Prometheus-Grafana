@@ -9,7 +9,7 @@ pipeline {
                 sshagent(['Kubernetes']) {
                     sh '''
                     
-                    scp -o StrictHostKeyChecking=no /home/ubuntu/*.yaml ubuntu@3.109.48.24 /home/ubuntu/
+                    scp -o StrictHostKeyChecking=no /home/ubuntu/*.yaml ubuntu@3.109.48.24 /home/ubuntu
                     ssh -t ubuntu@3.109.48.24 /bin/bash << 'EOF'
                     kubectl apply -f mongodb.yaml 
                     helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
